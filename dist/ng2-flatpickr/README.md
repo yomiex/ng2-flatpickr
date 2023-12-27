@@ -59,10 +59,7 @@ let exampleOptions: FlatpickrOptions = {
 Set a placeholder for the input:
 
 ```javascript
-<ng2-flatpickr
-  placeholder="Pick a date!"
-  formControlName="formControlName"
-></ng2-flatpickr>
+<ng2-flatpickr placeholder="Pick a date!" formControlName="formControlName"></ng2-flatpickr>
 ```
 
 Set a date using a string or a date object:

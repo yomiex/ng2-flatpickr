@@ -1,24 +1,16 @@
-import {
-  AfterViewInit,
-  Component,
-  forwardRef,
-  Input,
-  OnChanges,
-  SimpleChanges,
-  ViewChild,
-} from "@angular/core";
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { FlatpickrOptions } from "./flatpickr-options.interface";
+import { AfterViewInit, Component, forwardRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FlatpickrOptions } from './flatpickr-options.interface';
 
 declare var require: any;
 
 // @ts-ignore
-if (typeof window !== "undefined") {
-  require("flatpickr");
+if (typeof window !== 'undefined') {
+  require('flatpickr');
 }
 
 @Component({
-  selector: "ng2-flatpickr",
+  selector: 'ng2-flatpickr',
   template: `
     <div class="ng2-flatpickr-input-container" #flatpickr>
       @if (!hideButton) {
@@ -42,9 +34,7 @@ if (typeof window !== "undefined") {
     },
   ],
 })
-export class Ng2FlatpickrComponent
-  implements AfterViewInit, ControlValueAccessor, OnChanges
-{
+export class Ng2FlatpickrComponent implements AfterViewInit, ControlValueAccessor, OnChanges {
   public flatpickr: Object | undefined;
   private _tabindex = 0;
   onTouchedFn: Function = () => {};
@@ -57,7 +47,7 @@ export class Ng2FlatpickrComponent
     },
   };
 
-  @ViewChild("flatpickr", {
+  @ViewChild('flatpickr', {
     static: true,
   })
   flatpickrElement: any;
@@ -66,10 +56,10 @@ export class Ng2FlatpickrComponent
   config: FlatpickrOptions | undefined;
 
   @Input()
-  placeholder: string = "";
+  placeholder: string = '';
 
   @Input()
-  addClass: string = "";
+  addClass: string = '';
 
   @Input()
   setDate: string | Date | undefined;
@@ -109,10 +99,7 @@ export class Ng2FlatpickrComponent
   }
 
   setAltInputPlaceholder(placeholder: string) {
-    this.flatpickrElement.nativeElement._flatpickr.altInput.setAttribute(
-      "placeholder",
-      placeholder,
-    );
+    this.flatpickrElement.nativeElement._flatpickr.altInput.setAttribute('placeholder', placeholder);
   }
 
   ngAfterViewInit() {
@@ -120,9 +107,7 @@ export class Ng2FlatpickrComponent
       Object.assign(this.defaultFlatpickrOptions, this.config);
     }
     if (this.flatpickrElement.nativeElement.flatpickr) {
-      this.flatpickr = this.flatpickrElement.nativeElement.flatpickr(
-        this.defaultFlatpickrOptions,
-      );
+      this.flatpickr = this.flatpickrElement.nativeElement.flatpickr(this.defaultFlatpickrOptions);
     }
     if (this.setDate) {
       this.setDateFromInput(this.setDate);
@@ -130,24 +115,18 @@ export class Ng2FlatpickrComponent
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (
-      this.flatpickrElement.nativeElement &&
-      this.flatpickrElement.nativeElement._flatpickr
-    ) {
-      if (
-        changes.hasOwnProperty("setDate") &&
-        changes["setDate"].currentValue
-      ) {
-        this.setDateFromInput(changes["setDate"].currentValue);
+    if (this.flatpickrElement.nativeElement && this.flatpickrElement.nativeElement._flatpickr) {
+      if (changes.hasOwnProperty('setDate') && changes['setDate'].currentValue) {
+        this.setDateFromInput(changes['setDate'].currentValue);
       }
 
       if (
         this.config &&
         this.config.altInput &&
-        changes.hasOwnProperty("placeholder") &&
-        changes["placeholder"].currentValue
+        changes.hasOwnProperty('placeholder') &&
+        changes['placeholder'].currentValue
       ) {
-        this.setAltInputPlaceholder(changes["placeholder"].currentValue);
+        this.setAltInputPlaceholder(changes['placeholder'].currentValue);
       }
     }
   }

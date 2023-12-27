@@ -46,11 +46,7 @@ export abstract class FlatpickrInstance {
   /** Sets a config option to value, redrawing the calendar and updating the current view, if necessary. */
   abstract set(option: string, value: any): void;
   /** Sets the current selected date(s) to date, which can be a date string, a Date, or an Array of the Dates. Optionally, pass true as the second argument to force any onChange events to fire. And if you’re passing a date string with a format other than your dateFormat, provide a dateFormat e.g. "m/d/Y". */
-  abstract setDate(
-    date: Date | string | Date[],
-    triggerChange: boolean,
-    dateFormat: string,
-  ): void;
+  abstract setDate(date: Date | string | Date[], triggerChange: boolean, dateFormat: string): void;
   /** Shows/opens the calendar if its closed, hides/closes it otherwise. */
   abstract toggle(): void;
 }
