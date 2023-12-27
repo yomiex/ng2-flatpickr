@@ -1,6 +1,6 @@
 {
   "name": "ng2-flatpickr",
-  "version": "17.0.0.rc.0",
+  "version": "17.0.0-rc.0",
   "description": "Angular 17 wrapper for flatpickr",
   "main": "index.js",
   "peerDependencies": {
