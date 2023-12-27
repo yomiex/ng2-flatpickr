@@ -16,3 +16,7 @@ public_api.js.map
 
 # IDE
 .vscode
+
+.idea/
+
+.angular/

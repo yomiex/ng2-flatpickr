@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ng2-flatpickr",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "flatModuleFile": "ng2-flatpickr"
+  }
+}

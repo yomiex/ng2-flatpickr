@@ -1,9 +1,5 @@
 [![Build Status](https://travis-ci.org/mezoistvan/ng2-flatpickr.svg?branch=master)](https://travis-ci.org/mezoistvan/ng2-flatpickr)
 
-# v17.0.0.rc.0
-
-Add support for Angular 17.
-
 # ng2-flatpickr
 
 ng2-flatpickr is a lightweight Angular wrapper for flatpickr, which is usable in reactive forms inside Angular.
