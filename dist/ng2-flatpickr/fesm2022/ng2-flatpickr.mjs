@@ -4,7 +4,7 @@ import * as i1 from '@angular/forms';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import 'flatpickr';
-
+declare var require: any;
 // @ts-ignore
 if (typeof window !== 'undefined') {
     require('flatpickr');

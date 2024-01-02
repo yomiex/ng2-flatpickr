@@ -1,6 +1,9 @@
 import { Component, forwardRef, Input, ViewChild } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as i0 from "@angular/core";
+
+declare var require: any;
+
 // @ts-ignore
 if (typeof window !== 'undefined') {
     require('flatpickr');
